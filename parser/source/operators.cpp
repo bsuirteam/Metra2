@@ -244,7 +244,7 @@ std::unordered_map<std::string, int> get_operators(std::string code){
 }
 
 void print_operators(std::unordered_map<std::string, int> operators){
-     for (auto [op, count] : operators){
+    for (auto [op, count] : operators){
         if (count != 0){
             std::cout << op << ": " << count << '\n';
         }
