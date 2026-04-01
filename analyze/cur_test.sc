@@ -10,9 +10,9 @@ object FlowTest {
             } else {
 
                 if (x > 5) {
-                result = x + 10
+                    result = x + 10
                 } else {
-                result = x - 1
+                    result = x - 1
                 }
             }
 
@@ -53,11 +53,11 @@ object FlowTest {
             if (i % 2 == 0) {
 
                 if (i == 4) {
-                println("four")
+                    println("four")
                 } else if (i == 6) {
-                println("six")
+                    println("six")
                 } else {
-                println("even")
+                    println("even")
                 }
 
             } else {
@@ -83,16 +83,16 @@ object FlowTest {
                     else "two small"
 
                 case 3 => 
-                if (x > y) {
-                    if (x - y > 3) "three far"
-                    else "three close"
-                } else {
-                    "three reverse"
-                }
+                    if (x > y) {
+                        if (x - y > 3) "three far"
+                        else "three close"
+                    } else {
+                        "three reverse"
+                    }
 
                 case _ => 
-                if (j % 2 == 0) "other even"
-                else "other odd"
+                    if (j % 2 == 0) "other even"
+                    else "other odd"
             }
             println(msg)
         }

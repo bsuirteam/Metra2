@@ -1,5 +1,6 @@
 #include "parser/include/file.h"
 #include "parser/include/operators.h"
+#include "parser/include/branches.h"
 #include <iostream>
 
 int main(){
@@ -12,5 +13,9 @@ int main(){
 
     print_operators(oper);
 
-    std::cout << result << '\n';
+    std::cout << result << "\n\n";
+
+    print_branches(oper);
+
+    std::cout << count_branches(oper) << '\n';
 }
