@@ -4,6 +4,7 @@ object FlowTest {
         var y = 3
         var result = 0
 
+
         if (x > 0) {
 
 
@@ -26,28 +27,29 @@ object FlowTest {
 
         val category = x match {
 
-            case 0 => {"zero"}
+            case 0 => "zero"
 
             case 1 => {
-                if (y > 0) {"one-positive"}
-                else {"one-negative"}}
+                if (y > 0) "one-positive"
+                else "one-negative"
+            }
 
             case 2 => {
                 if (y % 2 == 0) {
-                    if (y > 10) {"two-big-even"}
-                    else {"two-small-even"}
-                } else {
-                    "two-odd"
-                }}
+                    if (y > 10) "two-big-even"
+                    else "two-small-even"
+                } else "two-odd"
+            }
 
             case _ => {
                 if (x > 10) {
-                    if (y > 5) {"large-large"}
-                    else {"large-small"}
+                    if (y > 5) "large-large"
+                    else "large-small"
                 } else {
-                    if (x < 0) {"negative"}
-                    else {"other"}
-                }}
+                    if (x < 0) "negative"
+                    else "other"
+                }
+            }
         }
 
         println(category)
@@ -64,7 +66,7 @@ object FlowTest {
                     println("even")
                 }
 
-            } else if (){
+            } else{
 
                 if (i > 7) {
                     println("odd big")
@@ -80,24 +82,26 @@ object FlowTest {
         for (j <- 1 to 5) {
             val msg = j match {
 
-                case 1 => {"one"}
+                case 1 => "one"
 
                 case 2 => {
-                    if (j + x > 5) {"two big"}
-                    else {"two small"}
-                    }
+                    if (j + x > 5) "two big"
+                    else "two small"
+                }
 
                 case 3 => {
                     if (x > y) {
-                        if (x - y > 3) {"three far"}
-                        else {"three close"}
+                        if (x - y > 3) "three far"
+                        else "three close"
                     } else {
-                        {"three reverse"}
-                    }}
+                        "three reverse"
+                    }
+                }
 
                 case _ => {
-                    if (j % 2 == 0) {"other even"}
-                    else {"other odd"}}
+                    if (j % 2 == 0) "other even"
+                    else "other odd"
+                }
             }
             println(msg)
         }

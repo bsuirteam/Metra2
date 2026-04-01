@@ -23,5 +23,7 @@ int main(){
 
     std::cout << "Max nest: " << count_max_nesting_depth(code);
 
+    // std::cout << add_braces(code);
+
     // std::cout << remove_useless_braces(code);
 }

@@ -36,7 +36,10 @@ void print_branches(std::unordered_map<std::string, int> operators){
 
 int count_max_nesting_depth(std::string code) {
 
+    code = add_braces(code);
+
     code = remove_useless_braces(code);
+
 
     int n = code.size();
     int max_depth = 0;
