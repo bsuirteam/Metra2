@@ -36,6 +36,8 @@ void print_branches(std::unordered_map<std::string, int> operators){
 
 int count_max_nesting_depth(std::string code) {
 
+    code = remove_useless_braces(code);
+
     int n = code.size();
     int max_depth = 0;
     int match_count = 0;
@@ -88,6 +90,7 @@ int count_max_nesting_depth(std::string code) {
 
                 if (j + 1 < n && code.substr(j, 2) == "if") {
                     st.push("else_if");
+                    i = j + 2;
                     //max_depth = std::max(max_depth, (int)st.size() - 1 - match_count);
                 }
             }
@@ -99,6 +102,10 @@ int count_max_nesting_depth(std::string code) {
 
             else if (word == "while") {
                 st.push("while");
+                // max_depth = std::max(max_depth, (int)st.size() - 1 - match_count);
+            }
+            else if (word == "do") {
+                st.push("do");
                 // max_depth = std::max(max_depth, (int)st.size() - 1 - match_count);
             }
 
@@ -125,6 +132,7 @@ int count_max_nesting_depth(std::string code) {
 
         // --- закрытие блока ---
         if (code[i] == '}') {
+            // print_stack(st);
             max_depth = std::max(max_depth, (int)st.size() - 1 - match_count);
 
             if (st.size() != 0){
@@ -167,6 +175,16 @@ int count_max_nesting_depth(std::string code) {
                         }
 
                     }
+                }
+                else if (st.top() == "do"){
+                    int j = i + 1;
+                    
+                    while (j < n && std::isspace(code[j])) j++;
+
+                    if (j + 4 < n && code.substr(j, 5) == "while"){
+                        i = j + 4;
+                    }
+                    st.pop();
                 }
                 else{
                     st.pop();
