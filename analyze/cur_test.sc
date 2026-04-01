@@ -4,7 +4,10 @@ object FlowTest {
         var y = 3
         var result = 0
 
+<<<<<<< HEAD
         
+=======
+>>>>>>> ea51a7ac87b814b0b7fc8f5201109eed7ecb0f1f
         if (x > 0) {
 
 
