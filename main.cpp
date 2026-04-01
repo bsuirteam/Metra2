@@ -17,5 +17,7 @@ int main(){
 
     print_branches(oper);
 
-    std::cout << count_branches(oper) << '\n';
+    std::cout << count_branches(oper) << "\n\n";
+
+    std::cout << "Max nest: " << count_max_nesting_depth(code);
 }
